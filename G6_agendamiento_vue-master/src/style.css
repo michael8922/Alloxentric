@@ -1,0 +1,456 @@
+/* ESTILOS PROPIOS */
+
+html, body, .container-fluid, .cont-all, #app, #content-wrapper {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.v-toolbar {
+  flex: none;
+}
+
+#content-wrapper {
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.container-main {
+  min-height: 100vh; /* Esto usará la altura completa de la ventana del navegador */
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1; /* Permite que el contenido crezca para ocupar el espacio disponible */
+  overflow-y: auto;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.input-group-append {
+  cursor: pointer;
+}
+
+#cont-login {
+  height: 100%;
+}
+
+.cont-all {
+  padding-top: 3em;
+}
+
+form.user .form-control-user {
+  padding: 1rem!important;
+  height: 100%;
+}
+
+.bg-gradient-primary, .bg-all {
+  flex: 1; /* Esto hará que tome el espacio restante */
+}
+
+.login-text {
+  color: #fff;
+}
+
+.login-text p {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ESTILOS CALENDARIO */
+
+.wrapper{
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+}
+.wrapper header{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+}
+header .icons{
+  display: flex;
+}
+header .icons span{
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons span:last-child{
+  margin-right: -10px;
+}
+header .icons span:hover{
+  background: #f2f2f2;
+}
+header .current-date{
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.calendar{
+  padding: 20px;
+}
+.calendar ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+  padding-inline-start: 0!important;
+
+}
+.calendar .days{
+  margin-bottom: 20px;
+}
+.calendar li{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar .weeks li{
+  font-weight: 500;
+  cursor: default;
+}
+.calendar .days li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.days li.inactive{
+  color: #aaa;
+}
+.days li.active{
+  color: #fff;
+}
+.days li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.active::before{
+  background: #06b7b2;
+}
+.days li:not(.active):hover::before{
+  background: #f2f2f2;
+}
+
+.btn-hora {
+margin: 0 0 10px 10px;
+border: solid 2px #06b7b2!important;
+}
+
+.selected {
+background-color: #06b7b2!important;
+color: #fff!important;
+}
+
+.v-app-bar.v-app-bar--fixed {
+  position: initial;
+}
+
+.img-profile {
+  height: 2rem;
+  width: 2rem;
+}
+
+.dropdown .dropdown-menu {
+  z-index: 1050!important;
+  position: absolute!important;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #01a79d;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.inactive {
+  pointer-events: none; /* Deshabilita clics en días inactivos */
+  color: #ccc; /* Color gris para días inactivos */
+}
+
+.past {
+  color: #ccc;
+  pointer-events: none;
+}
+
+.today .dot {
+  height: 5px;
+  width: 5px;
+  background-color: #01a79d;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+/* ESTILOS FORM MULTI */
+
+.header {
+  max-width: 800px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.header__title {
+  margin-bottom: 10px;
+  font-size: 3.1rem;
+  font-weight: 800;
+}
+
+.content {
+  width: 95%;
+  margin: 0 auto 50px;
+}
+
+.content__inner {
+  margin-top: 1rem;
+}
+
+.btn-disabled {
+  background-color: grey;
+} 
+
+.content__title {
+  margin-bottom: 40px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.content__title--m-sm {
+  margin-bottom: 10px;
+}
+
+.multisteps-form {
+  padding-bottom: 2rem;
+}
+
+.multisteps-form__title {
+  font-size: 1rem;
+  background-color: #01a79d;
+  padding: 10px;
+  border-radius: 90px;
+  text-align: center;
+  color: #fff;
+}
+
+.multisteps-form__progress {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.multisteps-form__progress-btn {
+  transition-property: all;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  position: relative;
+  padding-top: 20px;
+  color: rgba(108, 117, 125, 0.7);
+  text-indent: -9999px;
+  border: none;
+  background-color: transparent;
+  outline: none !important;
+  cursor: pointer;
+}
+@media (min-width: 800px) {
+  .multisteps-form__progress-btn {
+    text-indent: 0;
+  }
+}
+.multisteps-form__progress-btn:before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: 13px;
+  height: 13px;
+  content: '';
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  transition: all 0.15s linear 0s, -webkit-transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
+  transition: all 0.15s linear 0s, transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
+  transition: all 0.15s linear 0s, transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s, -webkit-transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background-color: #fff;
+  box-sizing: border-box;
+  z-index: 3;
+}
+.multisteps-form__progress-btn:after {
+  position: absolute;
+  top: 5px;
+  left: calc(-50% - 13px / 2);
+  transition-property: all;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  display: block;
+  width: 100%;
+  height: 2px;
+  content: '';
+  background-color: currentColor;
+  z-index: 1;
+}
+.multisteps-form__progress-btn:first-child:after {
+  display: none;
+}
+.multisteps-form__progress-btn.js-active {
+  color: #01a79d;
+}
+.multisteps-form__progress-btn.js-active:before {
+  -webkit-transform: translateX(-50%) scale(1.2);
+          transform: translateX(-50%) scale(1.2);
+  background-color: currentColor;
+}
+
+.multisteps-form__form {
+  position: relative;
+  min-height: 400px;
+}
+
+.multisteps-form__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.multisteps-form__panel.js-active {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}
+.multisteps-form__panel[data-animation="slideHorz"] {
+  left: 50px;
+}
+.multisteps-form__panel[data-animation="slideHorz"].js-active {
+  transition-property: all;
+  transition-duration: 0.45s;
+  transition-timing-function: cubic-bezier(0.2, 1.13, 0.38, 1.43);
+  transition-delay: 0s;
+  left: 0;
+}
+
+.today .day-number {
+  position: relative;
+}
+
+.dot {
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  background-color: #01a79d;
+  border-radius: 50%;
+  bottom: -2px; /* Ajustar según sea necesario */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* ESTILOS CARD DOCTOR */
+
+.header-card {
+  background-color: #01a79d;
+  padding: 8px 10px 8px 10px;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.header-card h5 {
+  font-weight: 800;
+}
+
+.content-card {
+  padding: 1rem;
+}
+
+.scroll-card {
+  overflow: auto;
+  height: 400px;
+}
+
+.imagen-circular {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.box-nro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nro_modal {
+  background-color: #01a79d;
+  color: #fff;
+  width: 50%;
+  border-radius: 100px;
+  padding: 10px;
+}
+
+.nro_modal h4 {
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 0!important;
+}
+
+/* ESTILOS PANTALLA PRINCIPAL DOCTOR */
+
+.PacienteModal {
+  background-color: #01a79d;
+  border-radius: 120px;
+  padding: 8px;
+  text-align: center;
+  color: #fff;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  
+  70% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+.status-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  animation: pulse 1s infinite ease-in-out;
+}

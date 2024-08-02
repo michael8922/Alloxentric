@@ -1,0 +1,66 @@
+[{
+  "_id": {
+    "$oid": "655555fcc174efb214a66f4a"
+  },
+  "prevision": "Fonasa"
+},
+{
+  "_id": {
+    "$oid": "655555fcc174efb214a66f4b"
+  },
+  "prevision": "Isapre de Codelco"
+},
+{
+  "_id": {
+    "$oid": "655555fcc174efb214a66f4c"
+  },
+  "prevision": "Isapre Banmedica"
+},
+{
+  "_id": {
+    "$oid": "655555fcc174efb214a66f4d"
+  },
+  "prevision": "Isapre Colmena"
+},
+{
+  "_id": {
+    "$oid": "655555fcc174efb214a66f4e"
+  },
+  "prevision": "Isapre Consalud"
+},
+{
+  "_id": {
+    "$oid": "655555fcc174efb214a66f4f"
+  },
+  "prevision": "Isapre Cruz Blanca"
+},
+{
+  "_id": {
+    "$oid": "655555fcc174efb214a66f50"
+  },
+  "prevision": "Isapre Cruz Del Norte"
+},
+{
+  "_id": {
+    "$oid": "655555fcc174efb214a66f51"
+  },
+  "prevision": "Isapre Fundacion Banco Estado"
+},
+{
+  "_id": {
+    "$oid": "655555fcc174efb214a66f52"
+  },
+  "prevision": "Isapre Nueva MásVida"
+},
+{
+  "_id": {
+    "$oid": "655555fcc174efb214a66f53"
+  },
+  "prevision": "Isapre Vida Tres"
+},
+{
+  "_id": {
+    "$oid": "655555fcc174efb214a66f54"
+  },
+  "prevision": "Particular"
+}]

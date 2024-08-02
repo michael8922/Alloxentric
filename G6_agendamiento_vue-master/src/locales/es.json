@@ -1,0 +1,21 @@
+
+{
+    "Main": {
+      "message": "Hola Mundo desde el Inicio",
+      "message2": "Probando i18n",
+      "message3": "Conectado al Back !"
+    },
+    "dataTable":{
+      "title": "CRUD",
+      "btnAdd": "Agregar",
+      "datos": "Ingrese los datos",
+      "name": "Nombre",
+      "number": "Número",
+      "btnClose": "Cerrar",
+      "btnSave": "Guardar",
+      "btnEdit": "Editar",
+      "textDelete": "¿Esta seguro de eliminar?",
+      "btnDelete": "Eliminar",
+      "btnCancel": "Cancelar"
+    }
+  }

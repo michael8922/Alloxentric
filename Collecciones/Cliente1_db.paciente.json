@@ -1,0 +1,54 @@
+[{
+  "_id": {
+    "$oid": "653738999f67e7ea9da55cf5"
+  },
+  "id": null,
+  "rut": "22.282.878-3",
+  "nombre": "Hugo",
+  "apellido": "Leudo",
+  "correo": "fernelis.hugo.leudo@gmail.com",
+  "telefono": "984806041",
+  "password": "123123123",
+  "created_at": {
+    "$date": "2023-10-24T03:23:05.813Z"
+  },
+  "updated_at": {
+    "$date": "2023-10-24T03:23:05.813Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "654305a9396d665d9b01e0df"
+  },
+  "id": null,
+  "rut": "22.232.858-6",
+  "nombre": "Hugo",
+  "apellido": "Leudo",
+  "correo": "fernelis.hugo.leudo@gmail.com",
+  "telefono": "984806041",
+  "password": "12312313",
+  "created_at": {
+    "$date": "2023-11-02T02:12:57.484Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-02T02:12:57.484Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "65514efb8aeb157cccd49849"
+  },
+  "id": null,
+  "rut": "11.111.111-1",
+  "nombre": "Javier",
+  "apellido": "jjj",
+  "correo": "javier@duocuc.cl",
+  "telefono": "1232131231",
+  "password": "12345645",
+  "created_at": {
+    "$date": "2023-11-12T22:17:31.743Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-12T22:17:31.743Z"
+  }
+}]

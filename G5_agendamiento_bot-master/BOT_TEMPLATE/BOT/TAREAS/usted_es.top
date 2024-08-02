@@ -1,0 +1,124 @@
+﻿topic: ~ustedEs keep repeat ()
+
+t: (!$sp)
+        $sp = 0 
+        $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_IDENTIDAD
+                $x.comandoAcanal = MAX_3-SILENCE_2
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = NO_CONTESTAN
+                $x.argumentoComando.codigo = NC
+        [^jsonwrite($x)]
+        Buenos días. Soy Isabel, la ASISTENTE VIRTUAL de ClinicMedic.
+        
+
+u: () 	
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+        ¿En qué le podemos ayudar? Escriba:
+        1: Agendar cita medica 
+        2: Anular cita medica 
+        3: Modificar cita medica 
+        4: Consultar cita medica
+        5: Hablar con un agente
+
+
+a: AGENDAR-CITA ( 1 ) 
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+	$estado = ~agendarCita
+	$sp = null
+        $cc = null
+
+a: ANULAR-CITA ( 2 ) 
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+	$estado = ~anularCita
+	$sp = null
+        $ac = null
+
+a: MODIFICAR-CITA ( 3 ) 
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+	$estado = ~modificarCita
+	$sp = null
+        $mc = null
+
+a: CONSULTAR-CITA ( 4 ) 
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+	$estado = ~consultarCita
+	$sp = null
+
+
+a: CONFIRMACION-TRANFERENCIA-AGENTE ( 5 ) 
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        Por favor espere en línea mientras lo transferimos con uno de nuestros ejecutivos.
+        $estado = null
+        $sp = null
+		
+
+a: MENSAJE-VACIO  (%length==0)   $sp = null	
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  MENSAJE_VACIO
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = NO_RESPONDE
+                $x.argumentoComando.codigo = NR
+        [^jsonwrite($x)]	
+	Por favor enviar el numero de la opción que corresponda.
+	$estado = ~ustedEs
+
+a: MENSAJE-DESCONOCIDO ( )  $sp = null	
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  MENSAJE_DESCONOCIDO
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = NO_ENTIENDE
+                $x.argumentoComando.codigo = NE
+	[^jsonwrite($x)]	
+	Por favor enviar el numero de la opción que corresponda.
+	$estado = ~ustedEs
+

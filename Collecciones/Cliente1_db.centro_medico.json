@@ -1,0 +1,300 @@
+[{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493df"
+  },
+  "name_centro_medico": "Centro Médico Providencia"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493e0"
+  },
+  "name_centro_medico": "Clínica Alemana de Santiago"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493e1"
+  },
+  "name_centro_medico": "Hospital Clínico Universidad de Chile"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493e2"
+  },
+  "name_centro_medico": "Clínica Las Condes"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493e3"
+  },
+  "name_centro_medico": "Hospital Militar de Santiago"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493e4"
+  },
+  "name_centro_medico": "Clínica Santa María"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493e5"
+  },
+  "name_centro_medico": "Hospital del Trabajador de Santiago"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493e6"
+  },
+  "name_centro_medico": "Centro Médico San Joaquín"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493e7"
+  },
+  "name_centro_medico": "Clínica Indisa"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493e8"
+  },
+  "name_centro_medico": "Hospital San Borja Arriarán"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493e9"
+  },
+  "name_centro_medico": "Centro Médico La Dehesa"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493ea"
+  },
+  "name_centro_medico": "Clínica Dávila"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493eb"
+  },
+  "name_centro_medico": "Hospital Clínico de la Universidad Católica"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493ec"
+  },
+  "name_centro_medico": "Centro Médico La Florida"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493ed"
+  },
+  "name_centro_medico": "Clínica Vespucio"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493ee"
+  },
+  "name_centro_medico": "Hospital Padre Hurtado"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493ef"
+  },
+  "name_centro_medico": "Centro Médico Bilbao"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493f0"
+  },
+  "name_centro_medico": "Clínica Universidad de los Andes"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493f1"
+  },
+  "name_centro_medico": "Hospital Sótero del Río"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493f2"
+  },
+  "name_centro_medico": "Centro Médico San Carlos"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493f3"
+  },
+  "name_centro_medico": "Clínica Santa María de La Dehesa"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493f4"
+  },
+  "name_centro_medico": "Hospital Barros Luco Trudeau"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493f5"
+  },
+  "name_centro_medico": "Centro Médico Vitacura"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493f6"
+  },
+  "name_centro_medico": "Clínica Avansalud"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493f7"
+  },
+  "name_centro_medico": "Hospital Exequiel González Cortés"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493f8"
+  },
+  "name_centro_medico": "Centro Médico Ñuñoa"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493f9"
+  },
+  "name_centro_medico": "Clínica Ciudad del Mar"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493fa"
+  },
+  "name_centro_medico": "Hospital San José"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493fb"
+  },
+  "name_centro_medico": "Centro Médico El Golf"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493fc"
+  },
+  "name_centro_medico": "Clínica Bupa Santiago"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493fd"
+  },
+  "name_centro_medico": "Hospital San Juan de Dios"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493fe"
+  },
+  "name_centro_medico": "Centro Médico San Bernardo"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b256493ff"
+  },
+  "name_centro_medico": "Clínica Los Carrera"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b25649400"
+  },
+  "name_centro_medico": "Hospital de Carabineros de Chile"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b25649401"
+  },
+  "name_centro_medico": "Centro Médico Maipú"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b25649402"
+  },
+  "name_centro_medico": "Clínica Los Coihues"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b25649403"
+  },
+  "name_centro_medico": "Hospital Félix Bulnes"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b25649404"
+  },
+  "name_centro_medico": "Centro Médico La Cisterna"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b25649405"
+  },
+  "name_centro_medico": "Clínica Reñaca"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b25649406"
+  },
+  "name_centro_medico": "Hospital Clínico Mutual de Seguridad CChC"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b25649407"
+  },
+  "name_centro_medico": "Centro Médico La Reina"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b25649408"
+  },
+  "name_centro_medico": "Clínica Biobío"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b25649409"
+  },
+  "name_centro_medico": "Hospital de Urgencia Asistencia Pública"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b2564940a"
+  },
+  "name_centro_medico": "Centro Médico La Serena"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b2564940b"
+  },
+  "name_centro_medico": "Clínica Las Lilas"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b2564940c"
+  },
+  "name_centro_medico": "Hospital San Camilo"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b2564940d"
+  },
+  "name_centro_medico": "Centro Médico Concepción"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b2564940e"
+  },
+  "name_centro_medico": "Clínica Las Delicias"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b2564940f"
+  },
+  "name_centro_medico": "Hospital de Puerto Montt"
+},
+{
+  "_id": {
+    "$oid": "654b00e3c4ea181b25649410"
+  },
+  "name_centro_medico": "Centro Médico Antofagasta"
+}]

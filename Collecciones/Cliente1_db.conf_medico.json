@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "654c61b9c86b371eaf0c1bbb"
+  },
+  "rut": "112233445-5",
+  "nombre": "asds",
+  "apellido": "sdf",
+  "correo": "pipe@duocuc.cl",
+  "telefono": "984806041",
+  "direccion": "dfdsfs",
+  "secret": "123123",
+  "especialidad": "Anestesiología",
+  "centro_medico": [
+    "Clínica Alemana de Santiago"
+  ],
+  "confirm_wsp": false,
+  "confirm_mail": false,
+  "confirm_fono": true,
+  "list_wsp": false,
+  "list_mail": true,
+  "list_fono": false,
+  "created_at": {
+    "$date": "2023-11-09T04:36:09.825Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-09T04:36:09.825Z"
+  }
+}]

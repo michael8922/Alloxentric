@@ -1,0 +1,516 @@
+[{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aa0"
+  },
+  "especialidad": "Alergia e Inmunología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aa1"
+  },
+  "especialidad": "Alergia e Inmunología Pediátrica"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aa2"
+  },
+  "especialidad": "Anatomía Patológica"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aa3"
+  },
+  "especialidad": "Anatomía Patológica Bucalmaxilofacial"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aa4"
+  },
+  "especialidad": "Anestesiología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aa5"
+  },
+  "especialidad": "Angiología General y Hemodinamia"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aa6"
+  },
+  "especialidad": "Cardiología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aa7"
+  },
+  "especialidad": "Cardiólogo Infantil"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aa8"
+  },
+  "especialidad": "Cirugía Cardiovascular"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aa9"
+  },
+  "especialidad": "Cirugía Cardiovascular Pediátrica"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aaa"
+  },
+  "especialidad": "Cirugía de Cabeza y Cuello"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aab"
+  },
+  "especialidad": "Cirugía de Tórax (Cirugía Torácica)"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aac"
+  },
+  "especialidad": "Cirugía General"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aad"
+  },
+  "especialidad": "Cirugía Infantil (Cirugía Pediátrica)"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aae"
+  },
+  "especialidad": "Cirugía Oncológica"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aaf"
+  },
+  "especialidad": "Cirugía Plástica y Reparadora"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ab0"
+  },
+  "especialidad": "Cirugía Vascular Periférica"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ab1"
+  },
+  "especialidad": "Cirugía y Traumatología Bucomaxilofacial"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ab2"
+  },
+  "especialidad": "Clínica Estomatológica"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ab3"
+  },
+  "especialidad": "Coloproctología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ab4"
+  },
+  "especialidad": "Dermatología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ab5"
+  },
+  "especialidad": "Dermatología Pediátrica"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ab6"
+  },
+  "especialidad": "Diagnóstico por Imágenes"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ab7"
+  },
+  "especialidad": "Diagnóstico por Imágenes Bucomaxilofaciales"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ab8"
+  },
+  "especialidad": "Electrofisiología Cardíaca"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ab9"
+  },
+  "especialidad": "Emergentología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aba"
+  },
+  "especialidad": "Endocrinología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51abb"
+  },
+  "especialidad": "Endocrinólogo Infantil"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51abc"
+  },
+  "especialidad": "Endodoncia"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51abd"
+  },
+  "especialidad": "Farmacología Clínica"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51abe"
+  },
+  "especialidad": "Fisiatría (Medicina Física y Rehabilitación)"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51abf"
+  },
+  "especialidad": "Gastroenterología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ac0"
+  },
+  "especialidad": "Gastroenterólogo Infantil"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ac1"
+  },
+  "especialidad": "Genética Médica"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ac2"
+  },
+  "especialidad": "Geriatría"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ac3"
+  },
+  "especialidad": "Ginecología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ac4"
+  },
+  "especialidad": "Hematología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ac5"
+  },
+  "especialidad": "Hematólogo Infantil"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ac6"
+  },
+  "especialidad": "Hemoterapia e Inmunohematología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ac7"
+  },
+  "especialidad": "Hepatología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ac8"
+  },
+  "especialidad": "Hepatología Pediátrica"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ac9"
+  },
+  "especialidad": "Infectología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aca"
+  },
+  "especialidad": "Infectólogo Infantil"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51acb"
+  },
+  "especialidad": "Mastología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51acc"
+  },
+  "especialidad": "Medicina de Familia"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51acd"
+  },
+  "especialidad": "Medicina del Deporte"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ace"
+  },
+  "especialidad": "Medicina del Trabajo"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51acf"
+  },
+  "especialidad": "Medicina General"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ad0"
+  },
+  "especialidad": "Medicina General y de Familia"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ad1"
+  },
+  "especialidad": "Medicina Legal"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ad2"
+  },
+  "especialidad": "Medicina Nuclear"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ad3"
+  },
+  "especialidad": "Nefrología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ad4"
+  },
+  "especialidad": "Nefrólogo Infantil"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ad5"
+  },
+  "especialidad": "Neonatología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ad6"
+  },
+  "especialidad": "Neumonología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ad7"
+  },
+  "especialidad": "Neumólogo Infantil"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ad8"
+  },
+  "especialidad": "Neurocirugía"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ad9"
+  },
+  "especialidad": "Neurología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ada"
+  },
+  "especialidad": "Neurólogo Infantil"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51adb"
+  },
+  "especialidad": "Nutrición"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51adc"
+  },
+  "especialidad": "Obstetricia"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51add"
+  },
+  "especialidad": "Odontología Legal"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ade"
+  },
+  "especialidad": "Odontopediatría"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51adf"
+  },
+  "especialidad": "Oftalmología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ae0"
+  },
+  "especialidad": "Oncología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ae1"
+  },
+  "especialidad": "Oncólogo Infantil"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ae2"
+  },
+  "especialidad": "Ortodoncia"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ae3"
+  },
+  "especialidad": "Ortodoncia y Ortopedia Maxilar"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ae4"
+  },
+  "especialidad": "Ortopedia y Traumatología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ae5"
+  },
+  "especialidad": "Ortopedia y Traumatología Infantil"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ae6"
+  },
+  "especialidad": "Otorrinolaringología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ae7"
+  },
+  "especialidad": "Pediatría"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ae8"
+  },
+  "especialidad": "Periodoncia"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51ae9"
+  },
+  "especialidad": "Prótesis Dentobucomaxilar"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aea"
+  },
+  "especialidad": "Psiquiatría"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aeb"
+  },
+  "especialidad": "Psiquiatría Infantojuvenil"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aec"
+  },
+  "especialidad": "Quemados"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aed"
+  },
+  "especialidad": "Radioterapia o Terapia Radiante"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aee"
+  },
+  "especialidad": "Reumatología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51aef"
+  },
+  "especialidad": "Reumatólogo Infantil"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51af0"
+  },
+  "especialidad": "Salud Pública"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51af1"
+  },
+  "especialidad": "Terapia Intensiva"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51af2"
+  },
+  "especialidad": "Terapista Intensivo Infantil"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51af3"
+  },
+  "especialidad": "Tocoginecología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51af4"
+  },
+  "especialidad": "Toxicología"
+},
+{
+  "_id": {
+    "$oid": "6560d4c296e3c8d4d7e51af5"
+  },
+  "especialidad": "Urología"
+}]

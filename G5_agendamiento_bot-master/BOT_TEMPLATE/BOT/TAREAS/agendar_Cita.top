@@ -1,0 +1,461 @@
+topic: ~agendarCita keep repeat()
+
+t: () $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+
+u: (!$cc)
+        $cc = 0
+        $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+        Por favor, ingrese el RUT en el siguiente formato: ^"12345678-9"
+
+a: CONFIRMAR-RUT ( _* ) 
+        $rut = '_0
+        $ce = null
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        $_endpoint = ^"http://192.168.1.131:8000/example/example1/"
+        $_header = ^"accept: application/json"
+        $_url = ^join($_endpoint $rut)
+        $$data = ^jsonopen(direct GET $_url "" $_header)
+        $$data = ^jsonparse(transient NOFAIL $$data )
+        $v_rut = $$data[0].message
+        $rut_validado = $$data[0].rut
+        if ($v_rut == "ok")
+        {
+                $estado = ~confirmarFecha
+        }
+        else
+        {
+                $cc = null
+        } 
+
+
+topic: ~confirmarFecha keep repeat ()
+
+t: () $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+
+u: (!$ce )
+        $ce = 0
+        $ic = null
+        $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+        $_endpoint = ^"http://192.168.1.131:8000/listarDoctores/calendario_filtros"
+        $_header = ^"accept: application/json"
+        $_url = ^join($_endpoint)
+        $$data = ^jsonopen(direct GET $_url "" $_header)
+        $$data = ^jsonparse(transient NOFAIL $$data )
+        $v_centro_medico = $$data[0].centro_medico
+        $v_especialidad = $$data[0].especialidad
+        $v_nombre_medico = $$data[0].nombre_medico
+        $v_fecha1 = $$data[0].fecha
+        $v_fecha2 = $$data[1].fecha
+        $v_fecha3 = $$data[2].fecha
+        $v_hora1 = $$data[0].hora
+        $v_hora2 = $$data[1].hora
+        $v_hora3 = $$data[2].hora
+        $v_orden1 = $$data[0].nro_orden
+        $v_orden2 = $$data[1].nro_orden
+        $v_orden3 = $$data[2].nro_orden
+        if ( $v_fecha1 == null)
+        {
+                No hay horas disponibles. | ¿Desea volver al menu principal?
+        }
+        else if ($v_fecha1 != null AND $v_fecha2 == null AND $v_fecha3 == null)
+        {
+                Elija el horario disponible: 
+                1: $v_fecha1 $v_hora1
+        }
+        else if ($v_fecha3 == null AND $v_fecha2 != null AND $v_fecha1 != null)
+        {
+                Elija el horario disponible: 
+                1: $v_fecha1 $v_hora1
+                2: $v_fecha2 $v_hora2
+        }
+        else
+        {
+                Elija el horario disponible: 
+                1: $v_fecha1 $v_hora1
+                2: $v_fecha2 $v_hora2
+                3: $v_fecha3 $v_hora3
+        }
+        
+
+a: CONFIRMAR-FECHA1 ( 1 ) 
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        $orden = $v_orden1
+        $fecha = $v_fecha1
+        $hora = $v_hora1
+        $estado = ~ingresoCorreo
+
+a: CONFIRMAR-FECHA2 ( 2 ) 
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        $orden = $v_orden2
+        $fecha = $v_fecha2
+        $hora = $v_hora2
+        $estado = ~ingresoCorreo
+
+a: CONFIRMAR-FECHA3 ( 3 ) 
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        $orden = $v_orden3
+        $fecha = $v_fecha3
+        $hora = $v_hora3
+        $estado = ~ingresoCorreo
+
+a: VOLVER-MENU-PRINCIPAL ( ~sic )	
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  MENSAJE_DESCONOCIDO
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = NO_ENTIENDE
+                $x.argumentoComando.codigo = NE
+	[^jsonwrite($x)]
+	$estado = ~ustedEs
+
+a: MENSAJE-VACIO  (%length==0)   $ce = null	
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  MENSAJE_VACIO
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = NO_RESPONDE
+                $x.argumentoComando.codigo = NR
+        [^jsonwrite($x)]	
+	Por favor enviar el numero de la opción que corresponda.
+	$estado = ~confirmarFecha
+
+a: MENSAJE-DESCONOCIDO ( )  $ce = null	
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  MENSAJE_DESCONOCIDO
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = NO_ENTIENDE
+                $x.argumentoComando.codigo = NE
+	[^jsonwrite($x)]	
+	Por favor enviar el numero de la opción que corresponda.
+	$estado = ~confirmarFecha
+
+
+topic: ~ingresoCorreo keep repeat()
+
+t: () $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+
+u: (!$ic)
+        $ic = 0
+        $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+        Por favor, ingrese el Correo en el siguiente formato: ^"correo@correo.cl"
+
+a: CONFIRMAR-CORREO ( _* ) 
+        $correo = '_0
+        $it = null
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        if ($correo == ""){
+                $ic = null
+        }
+        else
+        {
+                $estado = ~ingresoTelefono
+        }
+        
+        
+topic: ~ingresoTelefono keep repeat()
+
+t: () $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+
+u: (!$it)
+        $it = 0
+        $ip = null
+        $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+        Por favor, ingrese el Telefono en el siguiente formato: ^"987654321"
+
+a: CONFIRMAR-TELEFONO ( _* ) 
+        $Telefono = '_0
+        $Dv = ^"+56"
+        $celular = ^join($Dv $Telefono)
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        if ($celular == ""){
+                $it = null
+        }
+        else
+        {
+                $estado = ~ingresoPrevision
+        }
+        
+
+topic: ~ingresoPrevision keep repeat()
+
+t: () $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+
+u: (!$ip)
+        $ip = 0
+        $in = null
+        $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+        Por favor, ingrese la Prevision ej: ^"Fonasa"
+
+a: CONFIRMAR-PREVISION ( _* ) 
+        $prevision = '_0
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        if ($prevision == ""){
+                $ip = null
+        }
+        else
+        {
+                $estado = ~ingresoNombre
+        }
+        
+
+topic: ~ingresoNombre keep repeat()
+
+t: () $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+
+u: (!$in)
+        $in = 0
+        $ac = null
+        $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+        Por favor, ingrese su Nombre:
+
+a: CONFIRMAR-NOMBRE ( _* ) 
+        $nombre = '_0
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        if ($nombre == ""){
+                $ic = null
+        }
+        else
+        {
+                $estado = ~actualizarCita
+        }
+        
+
+
+topic: ~actualizarCita keep repeat()
+
+t: () $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+
+u: (!$ac)
+        $ac = 0
+        $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+        Desea agendar la cita medica: 1: Si 2: No
+
+a: ACTUALIZAR-CITA ( 1 ) 
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        # ENDPOINT ACTUALIZAR CITA
+        $_endpoint = ^"http://192.168.1.131:8000/listarDoctores/update_appointment/"
+        $_url = ^join($_endpoint $orden )
+        $_header = ^"accept: application/json"
+        $_userAgent = ^"User_Agent: ChatScript"
+
+        # BODY CON PARAMETROS REQUERIDOS POR EL ENDPOINT
+        $_body = ^jsoncreate(transient object)
+        $_body.correo = $correo
+        $_body.telefono = $celular
+        $_body.rut = $rut_validado
+        $_body.prevision = $prevision
+        $_body.nombre_paciente = $nombre
+
+        # REQUEST A ENDPOINT
+         $response = ^jsonopen(PUT $_url $_body $_header $_userAgent)
+         $response = ^jsonparse(transient NOFAIL $response )
+         $estado = ~resumenCita
+
+
+a: RECHAZAR-CITA ( 2 ) 
+        $correo = '_0
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        $estado = ~ustedEs
+
+a: MENSAJE-VACIO  (%length==0)   $ac = null	
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  MENSAJE_VACIO
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = NO_RESPONDE
+                $x.argumentoComando.codigo = NR
+        [^jsonwrite($x)]	
+	Por favor enviar el numero de la opción que corresponda.
+	$estado = ~actualizarCita
+
+a: MENSAJE-DESCONOCIDO ( )  $ac = null	
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  MENSAJE_DESCONOCIDO
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = NO_ENTIENDE
+                $x.argumentoComando.codigo = NE
+	[^jsonwrite($x)]	
+	Por favor enviar el numero de la opción que corresponda.
+	$estado = ~actualizarCita
+
+topic: ~resumenCita keep repeat ()
+
+t: () $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+
+u: ()
+        $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+        Resumen cita agendada:
+        Correo: $correo 
+        Telefono: $celular
+        Rut: $rut_validado
+        Prevision: $prevision
+        Centro Medico: $v_centro_medico
+        Especialidad: $v_especialidad
+        Nombre Medico: $v_nombre_medico
+        Fecha: $fecha
+        Hora: $hora
+        Nº DE ORDEN: $orden | 
+        ¿Desea volver al menu prencipal?
+
+a: RESUMEN-CITA ( ~sic) 
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        $estado = ~ustedEs

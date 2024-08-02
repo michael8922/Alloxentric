@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "654456894be1b0bb201ea1b2"
+  },
+  "name_comuna": "San Miguel",
+  "region": {
+    "name_region": "RM"
+  }
+},
+{
+  "_id": {
+    "$oid": "654456cc4be1b0bb201ea1b3"
+  },
+  "name_comuna": "San Bernador",
+  "region": {
+    "name_region": "RM"
+  }
+},
+{
+  "_id": {
+    "$oid": "654456d04be1b0bb201ea1b4"
+  },
+  "name_comuna": "Melipilla",
+  "region": {
+    "name_region": "RM"
+  }
+},
+{
+  "_id": {
+    "$oid": "65446ac10636b95301afc128"
+  },
+  "name_comuna": "Mar y Mar",
+  "region": {
+    "name_region": "Coquimbo"
+  }
+},
+{
+  "_id": {
+    "$oid": "654470490636b95301afc129"
+  },
+  "name_comuna": "Tilin",
+  "region": {
+    "name_region": "Arica"
+  }
+}]

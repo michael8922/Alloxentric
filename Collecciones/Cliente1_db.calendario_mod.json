@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "655c2377879747d6dccef5d3"
+  },
+  "correo": "",
+  "telefono": "",
+  "rut": "1-9",
+  "prevision": "",
+  "centro_medico": "Clínica Alemana de Santiago",
+  "especialidad": "MEDICINA GENERAL",
+  "nombre_medico": "Dr. Juan Pérez",
+  "fecha": "2023-12-01",
+  "hora": "15:30",
+  "status": "confirmada-cancelado",
+  "nro_atencion": 1,
+  "created_at": {
+    "$date": "2023-11-21T03:26:47.889Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-21T03:26:47.889Z"
+  }
+}]

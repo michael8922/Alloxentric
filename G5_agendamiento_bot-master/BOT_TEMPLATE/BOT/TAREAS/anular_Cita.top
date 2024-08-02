@@ -1,0 +1,252 @@
+topic: ~anularCita keep repeat()
+
+t: () $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+
+u: (!$ac)
+        $ac = 0
+        $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+        Por favor, ingrese el RUT en el siguiente formato: ^"12345678-9"
+
+a: CONFIRMAR-RUT ( _* ) 
+        $rut_anular = '_0
+        $bc = null
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        $_endpoint = ^"http://192.168.1.131:8000/example/example1/"
+        $_header = ^"accept: application/json"
+        $_url = ^join($_endpoint $rut_anular)
+        $$data = ^jsonopen(direct GET $_url "" $_header)
+        $$data = ^jsonparse(transient NOFAIL $$data )
+        $v_rut = $$data[0].message
+        $rut_validado_anular = $$data[0].rut
+        if ($v_rut == "ok")
+        {
+                $estado = ~buscarCitas
+        }
+        else
+        {
+                $ac = null
+        } 
+        
+topic: ~buscarCitas keep repeat()
+
+t: () $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+
+u: (!$bc)
+        $bc = 0
+        $ca = null
+        $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+        $_endpoint = ^"http://192.168.1.131:8000/anularCitas/calendario_filtros/"
+        $_header = ^"accept: application/json"
+        $_url = ^join($_endpoint $rut_validado_anular)
+        $$data = ^jsonopen(direct GET $_url "" $_header)
+        $$data = ^jsonparse(transient NOFAIL $$data )
+        $centroMedico1 = $$data[0].centro_medico
+        $especialidad_anular1 = $$data[0].especialidad
+        $nombreMedico1 = $$data[0].nombre_medico
+        $fecha_anular1 = $$data[0].fecha
+        $hora_anular1 = $$data[0].hora
+        $orden_anular1 = $$data[0].nro_orden
+
+        $centroMedico2 = $$data[1].centro_medico
+        $especialidad_anular2 = $$data[1].especialidad
+        $nombreMedico2 = $$data[1].nombre_medico
+        $fecha_anular2 = $$data[1].fecha
+        $hora_anular2 = $$data[1].hora
+        $orden_anular2 = $$data[1].nro_orden
+
+        $centroMedico3 = $$data[2].centro_medico
+        $especialidad_anular3 = $$data[2].especialidad
+        $nombreMedico3 = $$data[2].nombre_medico
+        $fecha_anular3 = $$data[2].fecha
+        $hora_anular3 = $$data[2].hora
+        $orden_anular3 = $$data[2].nro_orden
+        if ( $fecha_anular1 == null)
+        {
+                No hay horas disponibles. | ¿Desea volver al menu principal?
+        }
+        else if ($fecha_anular1 != null AND $fecha_anular2 == null AND $fecha_anular3 == null)
+        {
+                Elija el horario disponible: 
+                1: $fecha_anular1 $hora_anular1
+        }
+        else if ($fecha_anular3 == null AND $fecha_anular2 != null AND $fecha_anular1 != null)
+        {
+                Elija el horario disponible: 
+                1: $fecha_anular1 $hora_anular1
+                2: $fecha_anular2 $hora_anular2
+        }
+        else
+        {
+                Elija el horario disponible: 
+                1: $fecha_anular1 $hora_anular1
+                2: $fecha_anular2 $hora_anular2
+                3: $fecha_anular3 $hora_anular3
+        }
+        
+a: CONFIRMAR-FECHA1_ANULAR ( 1 ) 
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        $ordenAnular = $orden_anular1
+        $estado = ~confirmarAnular
+
+a: CONFIRMAR-FECHA2_ANULAR ( 2 ) 
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        $ordenAnular = $orden_anular2
+        $estado = ~confirmarAnular
+
+a: CONFIRMAR-FECHA3_ANULAR ( 3 ) 
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        $ordenAnular = $orden_anular3
+        $estado = ~confirmarAnular
+
+a: VOLVER-MENU-PRINCIPAL ( ~sic )	
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  MENSAJE_DESCONOCIDO
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = NO_ENTIENDE
+                $x.argumentoComando.codigo = NE
+	[^jsonwrite($x)]
+	$estado = ~ustedEs
+
+a: MENSAJE-VACIO  (%length==0)   $ce = null	
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  MENSAJE_VACIO
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = NO_RESPONDE
+                $x.argumentoComando.codigo = NR
+        [^jsonwrite($x)]	
+	Por favor enviar el numero de la opción que corresponda.
+	$estado = ~buscarCitas
+
+a: MENSAJE-DESCONOCIDO ( )  $ce = null	
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  MENSAJE_DESCONOCIDO
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = NO_ENTIENDE
+                $x.argumentoComando.codigo = NE
+	[^jsonwrite($x)]	
+	Por favor enviar el numero de la opción que corresponda.
+	$estado = ~buscarCitas
+
+
+topic: ~confirmarAnular keep repeat()
+
+t: () $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+
+u: (!$ca)
+        $ca = 0
+        $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+        # ENDPOINT ACTUALIZAR CITA
+        $_endpoint = ^"http://192.168.1.131:8000/anularCitas/update_appointment/"
+        $_url = ^join($_endpoint $ordenAnular )
+        $_header = ^"accept: application/json"
+        $_userAgent = ^"User_Agent: ChatScript"
+
+        # BODY CON PARAMETROS REQUERIDOS POR EL ENDPOINT
+        $_body = ^jsoncreate(transient object)
+        $_body.correo = ""
+        $_body.telefono = ""
+        $_body.rut = ""
+        $_body.prevision = ""
+        $_body.nombre_paciente = ""
+
+        # REQUEST A ENDPOINT
+         $response = ^jsonopen(PUT $_url $_body $_header $_userAgent)
+         $response = ^jsonparse(transient NOFAIL $response )
+         Su cita a sido anulada exitosamente | ¿Desea volver al menu prencipal?
+
+a: CONFIRMAR-RUT ( ~sic ) 
+        $ce = null
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        $estado = ~ustedEs
+
+  a: MENSAJE-VACIO  (%length==0)   $ca = null	
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  MENSAJE_VACIO
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = NO_RESPONDE
+                $x.argumentoComando.codigo = NR
+        [^jsonwrite($x)]
+	$estado = ~confirmarAnular
+
+a: MENSAJE-DESCONOCIDO ( )  $ca = null	
+	$x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  MENSAJE_DESCONOCIDO
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = NO_ENTIENDE
+                $x.argumentoComando.codigo = NE
+	[^jsonwrite($x)]
+	$estado = ~confirmarAnular     

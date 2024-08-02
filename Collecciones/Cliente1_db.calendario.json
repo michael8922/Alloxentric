@@ -1,0 +1,360 @@
+[{
+  "_id": {
+    "$oid": "6566b00362ebf2d5b94d00d8"
+  },
+  "correo": "fernelis.hugo.leudo@gmail.com",
+  "telefono": "Hugo Leudo",
+  "rut": "22.282.878-3",
+  "prevision": "Isapre de Codelco",
+  "centro_medico": "Clínica Las Condes",
+  "especialidad": "Anestesiología",
+  "nombre_medico": "Carlos Puto",
+  "nombre_paciente": "Hugo Leudo",
+  "fecha": "2023-11-30",
+  "hora": "17:00",
+  "rut_medico": "112233445-5",
+  "status": "cancelada",
+  "nro_orden": "20231130957",
+  "created_at": {
+    "$date": "2023-11-29T03:29:07.280Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-29T03:29:07.280Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6566b71877164df56c68cfe2"
+  },
+  "correo": "PipinSotin@gmail.com",
+  "telefono": "Felipe Soto",
+  "rut": "72099046-4",
+  "prevision": "Isapre Consalud",
+  "centro_medico": "Clínica Indisa",
+  "especialidad": "Anestesiología",
+  "nombre_medico": "Carlos Puto",
+  "nombre_paciente": "Felipe Soto",
+  "fecha": "2023-12-12",
+  "hora": "16:00",
+  "rut_medico": "112233445-5",
+  "status": "confirmada",
+  "nro_orden": "20231212848",
+  "created_at": {
+    "$date": "2023-11-29T03:59:20.477Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-29T03:59:20.477Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6566b71877164df56c68cfe3"
+  },
+  "correo": "fernelis.hugo.leudo@gmail.com",
+  "telefono": "Hugo Leudo",
+  "rut": "111111111-1",
+  "prevision": "Isapre Banmedica",
+  "centro_medico": "Clínica Indisa",
+  "especialidad": "Anestesiología",
+  "nombre_medico": "Carlos Puto",
+  "nombre_paciente": "Hugo Leudo",
+  "fecha": "2023-11-30",
+  "hora": "14:30",
+  "rut_medico": "112233445-5",
+  "status": "cancelada",
+  "nro_orden": "20231212461",
+  "created_at": {
+    "$date": "2023-11-29T03:59:20.486Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-29T03:59:20.486Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6566b71877164df56c68cfe4"
+  },
+  "correo": "",
+  "telefono": "",
+  "rut": "",
+  "prevision": "",
+  "centro_medico": "Clínica Indisa",
+  "especialidad": "Anestesiología",
+  "nombre_medico": "Carlos Puto",
+  "nombre_paciente": "",
+  "fecha": "2023-12-17",
+  "hora": "14:30",
+  "rut_medico": "112233445-5",
+  "status": "cancelada",
+  "nro_orden": "20231217317",
+  "created_at": {
+    "$date": "2023-11-29T03:59:20.496Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-29T03:59:20.496Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6566b71877164df56c68cfe5"
+  },
+  "correo": "C.peña@gamil.com",
+  "telefono": "Cristian Peña",
+  "rut": "78564986-9",
+  "prevision": "Isapre Vida Tres",
+  "centro_medico": "Clínica Indisa",
+  "especialidad": "Anestesiología",
+  "nombre_medico": "Carlos Puto",
+  "nombre_paciente": "Cristian Peña",
+  "fecha": "2023-12-17",
+  "hora": "16:00",
+  "rut_medico": "112233445-5",
+  "status": "cancelada",
+  "nro_orden": "20231217890",
+  "created_at": {
+    "$date": "2023-11-29T03:59:20.517Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-29T03:59:20.517Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6566cb034c752b7bb297ee3f"
+  },
+  "correo": "j.valencia@gmail.com",
+  "telefono": "Javiera Valencia",
+  "rut": "89406024-1",
+  "prevision": "Isapre Cruz Del Norte",
+  "centro_medico": "Centro Médico Ñuñoa",
+  "especialidad": "Anestesiología",
+  "nombre_medico": "Carlos Pinto",
+  "nombre_paciente": "Javiera Valencia",
+  "fecha": "2023-11-30",
+  "hora": "09:30",
+  "rut_medico": "112233445-5",
+  "status": "cancelada",
+  "nro_orden": "20231130663",
+  "created_at": {
+    "$date": "2023-11-29T05:24:19.011Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-29T05:24:19.011Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6566cb034c752b7bb297ee40"
+  },
+  "correo": "M.zamorano@gmail.com",
+  "telefono": "Michael Zamorano",
+  "rut": "523412548-6",
+  "prevision": "Isapre Cruz Del Norte",
+  "centro_medico": "Centro Médico Ñuñoa",
+  "especialidad": "Anestesiología",
+  "nombre_medico": "Carlos Pinto",
+  "nombre_paciente": "Michael Zamorano",
+  "fecha": "2023-11-30",
+  "hora": "10:00",
+  "rut_medico": "112233445-5",
+  "status": "cancelada",
+  "nro_orden": "20231130638",
+  "created_at": {
+    "$date": "2023-11-29T05:24:19.012Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-29T05:24:19.012Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6566cb034c752b7bb297ee41"
+  },
+  "correo": "S.Suazo@gmail.com",
+  "telefono": "Saul Suazo",
+  "rut": "236548786-6",
+  "prevision": "Isapre Consalud",
+  "centro_medico": "Centro Médico Ñuñoa",
+  "especialidad": "Anestesiología",
+  "nombre_medico": "Carlos Pinto",
+  "nombre_paciente": "Saul Suazo",
+  "fecha": "2023-11-30",
+  "hora": "10:30",
+  "rut_medico": "112233445-5",
+  "status": "cancelada",
+  "nro_orden": "20231130265",
+  "created_at": {
+    "$date": "2023-11-29T05:24:19.069Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-29T05:24:19.069Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6566ccf318462be6520dd4c9"
+  },
+  "correo": "C.soto@gmail.com",
+  "telefono": "Camilo Soto",
+  "rut": "632145875-K",
+  "prevision": "Isapre Nueva MásVida",
+  "centro_medico": "Clínica Los Carrera",
+  "especialidad": "Anestesiología",
+  "nombre_medico": "Carlos Pinto",
+  "nombre_paciente": "Camilo Soto",
+  "fecha": "2023-11-30",
+  "hora": "14:30",
+  "rut_medico": "112233445-5",
+  "status": "cancelada",
+  "nro_orden": "20231130521",
+  "created_at": {
+    "$date": "2023-11-29T05:32:35.492Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-29T05:32:35.492Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6566ccf318462be6520dd4ca"
+  },
+  "correo": "",
+  "telefono": "",
+  "rut": "",
+  "prevision": "",
+  "centro_medico": "Clínica Los Carrera",
+  "especialidad": "Anestesiología",
+  "nombre_medico": "Carlos Pinto",
+  "nombre_paciente": "",
+  "fecha": "2023-11-29",
+  "hora": "15:30",
+  "rut_medico": "112233445-5",
+  "status": "cancelada",
+  "nro_orden": "20231130403",
+  "created_at": {
+    "$date": "2023-11-29T05:32:35.492Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-29T05:32:35.492Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6566ccf318462be6520dd4cb"
+  },
+  "correo": "",
+  "telefono": "",
+  "rut": "",
+  "prevision": "",
+  "centro_medico": "Clínica Los Carrera",
+  "especialidad": "Anestesiología",
+  "nombre_medico": "Carlos Pinto",
+  "nombre_paciente": "",
+  "fecha": "2023-11-30",
+  "hora": "15:00",
+  "rut_medico": "112233445-5",
+  "status": "cancelada",
+  "nro_orden": "20231130263",
+  "created_at": {
+    "$date": "2023-11-29T05:32:35.496Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-29T05:32:35.496Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6567e916481680f2c6a47afc"
+  },
+  "correo": "E.tobias@gmail.com",
+  "telefono": "Enrique Tobias",
+  "rut": "85463251-9",
+  "prevision": "Isapre Nueva MásVida",
+  "centro_medico": "Clínica Biobío",
+  "especialidad": "Anestesiología",
+  "nombre_medico": "Carlos Pinto",
+  "nombre_paciente": "Enrique Tobias",
+  "fecha": "2023-11-30",
+  "hora": "14:30",
+  "rut_medico": "112233445-5",
+  "status": "cancelada",
+  "nro_orden": "20231130614",
+  "created_at": {
+    "$date": "2023-11-30T01:44:54.435Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-30T01:44:54.435Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6567e916481680f2c6a47afa"
+  },
+  "correo": "rojas.k@gmail.com",
+  "telefono": "Kevin Rojas",
+  "rut": "531245695-6",
+  "prevision": "Isapre Fundacion Banco Estado",
+  "centro_medico": "Clínica Biobío",
+  "especialidad": "Anestesiología",
+  "nombre_medico": "Carlos Pinto",
+  "nombre_paciente": "Kevin Rojas",
+  "fecha": "2023-11-30",
+  "hora": "10:00",
+  "rut_medico": "112233445-5",
+  "status": "cancelada",
+  "nro_orden": "20231130510",
+  "created_at": {
+    "$date": "2023-11-30T01:44:54.434Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-30T01:44:54.434Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6567e916481680f2c6a47afb"
+  },
+  "correo": "ramirez@hotmail.com",
+  "telefono": "Cristian Ramirez",
+  "rut": "325146854-6",
+  "prevision": "Isapre Consalud",
+  "centro_medico": "Clínica Biobío",
+  "especialidad": "Anestesiología",
+  "nombre_medico": "Carlos Pinto",
+  "nombre_paciente": "Cristian Ramirez",
+  "fecha": "2023-11-30",
+  "hora": "09:30",
+  "rut_medico": "112233445-5",
+  "status": "reservada",
+  "nro_orden": "20231130853",
+  "created_at": {
+    "$date": "2023-11-30T01:44:54.434Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-30T01:44:54.434Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6567f3153fa6e8e13c5cfe41"
+  },
+  "correo": "",
+  "telefono": "",
+  "rut": "",
+  "prevision": "",
+  "centro_medico": "Clínica Indisa",
+  "especialidad": "Anestesiología",
+  "nombre_medico": "Carlos Pinto",
+  "nombre_paciente": "",
+  "fecha": "2023-11-30",
+  "hora": "09:30",
+  "rut_medico": "112233445-5",
+  "status": "disponible",
+  "nro_orden": "202311304",
+  "created_at": {
+    "$date": "2023-11-30T02:27:33.817Z"
+  },
+  "updated_at": {
+    "$date": "2023-11-30T02:27:33.817Z"
+  }
+}]

@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "654308825defebb4e393aed3"
+  },
+  "name_region": "RM"
+},
+{
+  "_id": {
+    "$oid": "654321d35defebb4e393aed4"
+  },
+  "name_region": "Coquimbo"
+},
+{
+  "_id": {
+    "$oid": "654321d55defebb4e393aed5"
+  },
+  "name_region": "Arica"
+},
+{
+  "_id": {
+    "$oid": "654321d95defebb4e393aed6"
+  },
+  "name_region": "Iquique"
+},
+{
+  "_id": {
+    "$oid": "654321de5defebb4e393aed7"
+  },
+  "name_region": "Puerto Montt"
+},
+{
+  "_id": {
+    "$oid": "6544420b4be1b0bb201ea1b1"
+  },
+  "name_region": "Los Lagos"
+}]

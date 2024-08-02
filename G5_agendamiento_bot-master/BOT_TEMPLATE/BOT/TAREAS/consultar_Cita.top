@@ -1,0 +1,148 @@
+topic: ~consultarCita keep repeat()
+
+t: () $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+
+u: (!$ccm)
+        $ccm = 0
+        $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+        Por favor, ingrese el RUT en el siguiente formato: ^"12345678-9"
+
+a: CONFIRMAR-RUT ( _* ) 
+        $rut_anular = '_0
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        $_endpoint = ^"http://192.168.1.131:8000/example/example1/"
+        $_header = ^"accept: application/json"
+        $_url = ^join($_endpoint $rut_anular)
+        $$data = ^jsonopen(direct GET $_url "" $_header)
+        $$data = ^jsonparse(transient NOFAIL $$data )
+        $v_rut = $$data[0].message
+        $rut_validado_anular = $$data[0].rut
+        if ($v_rut == "ok")
+        {
+                $estado = ~citasDisponibles
+        }
+        else
+        {
+                $ccm = null
+        } 
+        
+
+topic: ~citasDisponibles keep repeat()
+
+t: () $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+
+u: ()
+        $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  None
+                $x.intencionBot = CONSULTA_TRANSFERENCIA
+                $x.comandoAcanal = None
+        [^jsonwrite($x)]
+
+a: CONFIRMAR-RUT ( ) 
+	    $x = ^jsoncreate(TRANSIENT object)
+                $x.intencionContacto =  ACEPTA_TRANSFERENCIA
+                $x.intencionBot = DERIVA_EJECUTIVO
+                $x.comandoAcanal = TRANSFERIR_CONVERSACION
+                $x.destinoTransferencia = $anexo
+                $x.comandoReporteria = TIPIFICAR_CONVERSACION
+                $x.argumentoComando.tipificacion = EJECUTIVO
+                $x.argumentoComando.codigo = EJ
+        [^jsonwrite($x)]
+        $_endpoint = ^"http://192.168.1.131:8000/anularCitas/calendario_filtros/"
+        $_header = ^"accept: application/json"
+        $_url = ^join($_endpoint $rut_validado_anular)
+        $$data = ^jsonopen(direct GET $_url "" $_header)
+        $$data = ^jsonparse(transient NOFAIL $$data )
+        $mail = $$data[0].correo
+        $phone = $$data[0].telefono
+        $dni = $$data[0].rut
+        $previsionPaciente = $$data[0].prevision
+        $name = $$data[0].nombre_paciente
+
+        $centroMedico1 = $$data[0].centro_medico
+        $especialidad_anular1 = $$data[0].especialidad
+        $nombreMedico1 = $$data[0].nombre_medico
+        $fecha_anular1 = $$data[0].fecha
+        $hora_anular1 = $$data[0].hora
+        $orden_agendada1 = $$data[0].nro_orden
+
+        $centroMedico2 = $$data[1].centro_medico
+        $especialidad_anular2 = $$data[1].especialidad
+        $nombreMedico2 = $$data[1].nombre_medico
+        $fecha_anular2 = $$data[1].fecha
+        $hora_anular2 = $$data[1].hora
+        $orden_agendada2 = $$data[1].nro_orden
+
+        $centroMedico3 = $$data[2].centro_medico
+        $especialidad_anular3 = $$data[2].especialidad
+        $nombreMedico3 = $$data[2].nombre_medico
+        $fecha_anular3 = $$data[2].fecha
+        $hora_anular3 = $$data[2].hora
+        $orden_agendada3 = $$data[2].nro_orden
+        fecha : $mail * $phone * $dni * $previsionPaciente * $name
+        if ( $fecha_anular1 == null)
+        {
+                No hay horas disponibles.
+                $estado = ~ustedEs
+        }
+        else if ($fecha_anular1 != null AND $fecha_anular2 == null AND $fecha_anular3 == null)
+        {
+                Centro Medico: $centroMedico1
+                Especialidad: $especialidad_anular1 
+                Nombre Medico: $nombreMedico1 
+                Fecha: $fecha_anular1 
+                Hora: $hora_anular1
+                Nro de Orden: $orden_agendada1 
+                $estado = ~ustedEs
+        }
+        else if ($fecha_anular3 == null AND $fecha_anular2 != null AND $fecha_anular1 != null)
+        {
+                Centro Medico: $centroMedico1
+                Especialidad: $especialidad_anular1 
+                Nombre Medico: $nombreMedico1 
+                Nro de Orden: $orden_agendada1 |
+                Cita Medica 1
+                Fecha: $fecha_anular1 
+                Hora: $hora_anular1 |
+                Cita Medica 2
+                Fecha: $fecha_anular2 
+                Hora: $hora_anular2 
+                $estado = ~ustedEs
+        }
+        else
+        {
+                Centro Medico: $centroMedico1
+                Especialidad: $especialidad_anular1 
+                Nombre Medico: $nombreMedico1 
+                Nro de Orden: $orden_agendada1 |
+                Cita Medica 1
+                Fecha: $fecha_anular1 
+                Hora: $hora_anular1 |
+                Cita Medica 2
+                Fecha: $fecha_anular2 
+                Hora: $hora_anular2 |
+                Cita Medica 3
+                Fecha: $fecha_anular2 
+                Hora: $hora_anular2 
+                $estado = ~ustedEs
+        }
